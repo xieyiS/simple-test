@@ -1,13 +1,14 @@
-import java.util.ArrayList;
-import java.util.ListIterator;
+package test;
 
-public class TestListIterator {
+import java.util.ArrayList;
+
+public class ListIterator {
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);
-        ListIterator<Integer> integerListIterator = list.listIterator();
+        java.util.ListIterator<Integer> integerListIterator = list.listIterator();
         while(integerListIterator.hasNext()){
             /*if(integerListIterator.nextIndex() == 1){
                 integerListIterator.set(22);

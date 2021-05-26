@@ -1,3 +1,5 @@
+package test;
+
 import entity.Car;
 import entity.Person;
 
@@ -8,7 +10,7 @@ import java.io.*;
 1). 实现Cloneable接口并重写Object类中的clone()方法；
 2). 实现Serializable接口，通过对象的序列化和反序列化实现克隆，可以实现真正的深度克隆，代码如下：
 */
-public class TestSerializableCopy {
+public class SerializableCopy {
     @SuppressWarnings("unchecked")
     public static <T extends Serializable> T clone(T obj) throws Exception {
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
