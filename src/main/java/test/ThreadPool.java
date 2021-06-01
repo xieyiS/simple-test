@@ -1,5 +1,6 @@
 package test;
 
+import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -20,13 +21,15 @@ public class ThreadPool {
     static ExecutorService workStealingExecutor = Executors.newWorkStealingPool();
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //testFixedExecutor();
         //testCachedExecutor();
         //testScheduledExecutor();
         //testSingleExecutor();
         //testSingleScheduledExecutor();
         testWorkStealingExecutor();
+        //这里有个小技巧，让main程序一直监听控制台输入，异步的代码就可以一直在执行。不同于while(ture)的是，按回车或esc可退出
+        //new BufferedReader(new InputStreamReader(System.in)).readLine();
     }
 
     //测试定长线程池，线程池的容量为3，提交6个任务，根据打印结果可以看出先执行前3个任务，3个任务结束后再执行后面的任务
